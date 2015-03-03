@@ -163,9 +163,27 @@ body{
 
 /* Tablet Layout: 480px to a max of 768px*/
 @media only screen and (min-width: 480px) {
+	.content{
+		width: 70%;
+	}
 
 }
 /* Desktop Layout: 769px and above */
 @media only screen and (min-width: 769px) {
 
+	.members li .tag{
+		margin: 15px 30px;
+	}
+
+}
+
+@media only screen and (min-width: 1024px) {
+
+	.members li .tag{
+		margin: 15px 30px;
+	}
+	.members li{
+	width: 25%;
+
+	}
 }
