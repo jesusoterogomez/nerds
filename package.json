@@ -1,0 +1,21 @@
+{
+    "name": "axltxl.github.io",
+    "version" : "0.0.1",
+    "author": {
+        "name":  "Alejandro Ricoveri",
+        "email": "alejandroricoveri@gmail.com",
+        "url":   "http://axltxl.github.io/"
+    },
+    "dependencies" : {
+        "gulp"             : ">= 3.8.11",
+        "gulp-compass"     : ">= 2.0.3",
+        "gulp-connect"     : ">= 2.2.0",
+        "gulp-open"        : ">= 0.3.2",
+        "gulp-clean"       : ">= 0.3.1",
+        "gulp-minify-html" : ">= 1.0.1",
+        "gulp-gh-pages"    : ">= 0.5.0"
+    },
+    "engines" : {
+        "node" : ">= 0.10.0"
+    }
+}
