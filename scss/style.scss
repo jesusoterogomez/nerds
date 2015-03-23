@@ -1,171 +1,265 @@
-/* Mobile Layout: 480px and below. */
-html{
-	position: relative;
-}
+/////////////
+// Imports //
+/////////////
 
+// Google Fonts
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+
+///////////////
+// Variables //
+///////////////
+
+// Color Theme
+$color_0:#FFF;    // White
+$color_1:#efcd67; // Yellow
+$color_2:#3d6da9; // Blue
+$color_3:#d84646; // Red
+$color_4:#000;    // Black
+
+// Font Families
+$default-font: 'Lato', sans-serif;
+
+// Base Theme
+$brand-section-bg:     $color_1;
+$brand-section-color:  $color_4;
+
+$team-section-bg:      $color_2;
+$team-section-color:   $color_0;
+
+$skills-section-bg:    $color_3;
+$skills-section-color: $color_0;
+
+// Default Font Sizes
+$default-font-size: 10pt;
+$default-padding:   1em;
+$title-size:        2em;
+$subtitle-size:     1.4em;
+$paragraph-size:    1.2em;
+$popup-size:        0.8em;
+
+// Default Sizing
+$content-width:     90%;
+$section-spacing:   4em;
+$headline-spacing: .15em;
+$border-width:      2px;
+$border-radius:     4px;
+$avatar-border:     5px;
+$px-padding:        5px; // Padding base
+$px-margin:         5px; // Margin base
+
+// Logo Styling
+$logo-size:           2.2em;
+$logo-letter-spacing: 0.7em;
+$logo-top:           -0.7em; // Make text closer to logo	
+
+//////////////
+// Defaults //
+//////////////
+
+// Default Styling
 body{
 	width: 100%;
 	position: relative;
 	text-align: center;
-	font-family: 'Lato',sans-serif;
-	font-size: 10pt;
+	font-family: $default-font;
+	font-size: $default-font-size;
 	font-weight: 400;
 }
+
+// Section Default
+.section{
+	padding:$section-spacing 0;
+	.headline{
+		position: relative;
+		font-size: $subtitle-size;
+		text-transform: uppercase;
+		letter-spacing: $headline-spacing;
+	}
+	.description{
+		padding: $default-padding*3 0;
+		font-weight: 400;
+		font-size: $paragraph-size;
+		line-height: $paragraph-size*1.15;
+	}
+}
+
+// Default Content Wrapper
 .content{
-	width: 90%;
+	width: $content-width;
 	margin: 0 auto;
-	padding: 40px 0;
-	opacity: 0.8;
+	opacity: 0.8; // Soften content's tone.
 }
-.header{
-	background: #efcd67;
+
+////////////////////
+// Section Styles //
+////////////////////
+
+// Brand Section
+.brand{
+	background: $brand-section-bg;
+	color: $brand-section-color;
+	.logo{
+		font-size: $logo-size;
+		text-transform: uppercase;
+		h1{
+			position: relative;
+			display: block;
+			letter-spacing: $logo-letter-spacing;
+			top:$logo-top;
+			left: $logo-letter-spacing/2; //Fix offset due to letter spacing on last letter
+		}
+	}
+	.pitch{
+		font-size: $title-size;
+		font-weight: 700;
+		padding: $default-padding;
+	}
+	.subtitle{
+		font-size: $subtitle-size;
+		line-height: $subtitle-size;
+		span{
+			cursor: pointer;
+			position: relative;
+			font-weight: 700;
+			border-bottom: $border-width dotted $brand-section-color;
+		}
+	}
 }
-.header .brand{
-	font-size: 2.2em;
-	text-transform: uppercase;
+
+// Team Section
+.team{
+	background: $team-section-bg;
+	color: $team-section-color;
+	.members{
+		font-size: 0;
+		li{
+			display: inline-block;
+			vertical-align: top;
+			width: 50%;
+			font-size: $default-font-size;
+			margin: $px-margin*4 0;
+			box-sizing:border-box;
+			padding: 0 $px-padding;
+			.avatar{
+				width: 120px;
+				height: 120px;
+				border: $avatar-border solid $team-section-color;
+				border-radius: 50%;
+			}
+			.bio{
+				font-size: $paragraph-size;
+			}
+			.tag{
+				border-top: $border-width solid $brand-section-bg;
+				padding: $px-padding*2;
+				margin: $px-margin*2;
+				font-weight: 300;
+				text-transform: uppercase;
+				font-size: 0.9em;
+				color: $team-section-color;
+			}
+			.name{
+				text-decoration: line-through;
+				background: rgba(0,0,0,0.3);
+				display: inline-block;
+				border-radius: $border-radius;
+				margin-top: $px-margin*2;
+				padding: $px-padding;
+				opacity: 0.3;
+			}
+		}
+	}
 }
-.header .brand h1{
-	position: relative;
-	display: block;
-	letter-spacing: 0.7em;
-	left: 0.35em;
-	top: -25px;
+
+// Skills Section
+.skills{
+	background: $skills-section-bg;
+	color: $skills-section-color;
+	ul{
+		font-size: 0;
+		li{
+			font-size: $default-font-size*1.2;
+			display: inline-block;
+			width: 33%;
+			box-sizing:border-box;
+			margin: 10px;
+			padding: 8px 10px;
+			border-radius: 2px;
+			font-weight: 700;
+			background: rgba(255,255,255,0.9);
+			color: $skills-section-bg;
+		}
+	}
 }
-.header .pitch h1{
-	font-size: 2em;
-	font-weight: 700;
-	padding: 20px;
-}
-.header .subtitle{
-	font-size: 1.4em;
-	line-height: 1.3em;
-	margin: 0 auto;
-}
-.header .subtitle span{
-	cursor: pointer;
-	position: relative;
-	font-weight: 700;
-	border-bottom: 2px dotted #000;
-}
+
+///////////////////
+// Misc Elements //
+///////////////////
+
+// Popup Styling
 .popup{
 	position: relative;
-}
-.popup:before{
-	display: none;
-	vertical-align: middle;
-	content: attr(data-hover);
-	position: absolute;
-	bottom: 32px;
-	left: 50%;
-	margin-left: -50px;
-	background: #FFF;
-	font-size: 0.8em;
-	line-height: normal;
-	height: 100px;
-	padding: 25px 10px;
-	box-sizing:border-box;
-	width: 100px;
-	border-radius: 50%;
-}
-.popup:after{
-	display: none;
-	width: 20px;
-	content: "";
-	height: 20px;
-	background: #FFF;
-	position: absolute;
-	bottom: 25px;
-	left: 50%;
-	margin-left: -10px;
-	-webkit-transform: rotate(45deg);
-	transform:rotate(45deg);
-}
-.popup:hover:before,
-.popup:hover:after{
-	display: block;
-}
-
-.team{
-	background: #3d6da9;
-	color: #FFF;
-}
-.headline{
-		position: relative;
-		font-size: 1.5em;
-	text-transform: uppercase;
-	letter-spacing:.15em;
-}
-.description{
-	padding: 40px;
-	font-weight: 400;
-	font-size: 1.2em;
-}
-.members{
-	font-size: 0;
-}
-.members li{
-	display: inline-block;
-	vertical-align: top;
-
-	width: 50%;
-	font-size: 10pt;
-	margin: 20px 0;
-	box-sizing:border-box;
-	padding: 0 5px;
-}
-.members li .avatar{
-	width: 120px;
-	height: 120px;
-	border: 5px solid #FFF;
-	border-radius: 50%;
-}
-.members li .bio{
-	font-size: 1.2em;
-
-}
-.members li .tag{
-	border-top: 2px solid #efcd67;
-	padding: 10px;
-	margin: 10px;
-	font-weight: 300;
-	text-transform: uppercase;
-	font-size: 0.9em;
-	color: #fff;
-}
-.members .name{
-	text-decoration: line-through;
-	background: rgba(0,0,0,0.3);
-	display: inline-block;
-	border-radius: 4px;
-	margin-top: 10px;
-	padding: 5px;
-	opacity: 0.3;
+	&:before{
+		display: none;
+		vertical-align: middle;
+		content: attr(data-hover);
+		position: absolute;
+		bottom: 32px;
+		left: 50%;
+		margin-left: -50px;
+		background: #FFF;
+		font-size: 0.8em;
+		line-height: normal;
+		height: 100px;
+		padding: 25px 10px;
+		box-sizing:border-box;
+		width: 100px;
+		border-radius: 50%;
+		pointer-events:none;
+	}
+	&:after{
+		display: none;
+		width: 20px;
+		content: "";
+		height: 20px;
+		background: #FFF;
+		position: absolute;
+		bottom: 25px;
+		left: 50%;
+		margin-left: -10px;
+		-webkit-transform: rotate(45deg);
+		transform:rotate(45deg);
+		pointer-events:none;
+	}
+	&:hover:before,
+	&:hover:after{
+		display: block;
+	}
 }
 
-.skills{
-	background: #d84646;
-	color:#FFF;
-}
-.skills ul{font-size: 0}
-.skills ul li{
-	font-size: 12pt;
-	display: inline-block;
-	width: 33%;
-	background: #FFF;
-	box-sizing:border-box;
-	margin: 10px;
-	padding: 8px 10px;
-	border-radius: 2px;
-	font-weight: 700;
-	background: rgba(255,255,255,0.9);
-	color: #d84646;
-}
+///////////////////
+// Media Queries //
+///////////////////
 
-/* Tablet Layout: 480px to a max of 768px*/
+/* Small Layout */
 @media only screen and (min-width: 480px) {
-
+	.content{
+		width: 70%;
+	}
 }
-/* Desktop Layout: 769px and above */
+/* Medium Layout */
 @media only screen and (min-width: 769px) {
-
+	.team .members li .tag{
+		margin: 15px 30px;
+	}
+}
+/* Large Layout */
+@media only screen and (min-width: 1100px) {
+	.team .members li .tag{
+		margin: 15px 30px;
+	}
+	.team .members li{
+		width: 25%;
+	}
+	.skills ul li{width:auto;}
 }
