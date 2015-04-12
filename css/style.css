@@ -1,0 +1,41 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+body { width: 100%; position: relative; text-align: center; font-family: "Lato", sans-serif; font-size: 10pt; font-weight: 400; }
+
+.section { padding: 4em 0; }
+.section .headline { position: relative; font-size: 1.4em; text-transform: uppercase; letter-spacing: 0.15em; }
+.section .description { padding: 3em 0; font-weight: 400; font-size: 1.2em; line-height: 1.38em; }
+
+.content { width: 90%; margin: 0 auto; opacity: 0.8; }
+
+.brand { background: #efcd67; color: #000; }
+.brand .logo { font-size: 2.2em; text-transform: uppercase; }
+.brand .logo h1 { position: relative; display: block; letter-spacing: 0.7em; top: -0.7em; left: 0.35em; }
+.brand .pitch { font-size: 2em; font-weight: 700; padding: 1em; }
+.brand .subtitle { font-size: 1.4em; line-height: 1.4em; }
+.brand .subtitle span { cursor: pointer; position: relative; font-weight: 700; border-bottom: 2px dotted #000; }
+
+.team { background: #3d6da9; color: #FFF; }
+.team .members { font-size: 0; }
+.team .members li { display: inline-block; vertical-align: top; width: 50%; font-size: 10pt; margin: 20px 0; box-sizing: border-box; padding: 0 5px; }
+.team .members li .avatar { width: 120px; height: 120px; border: 5px solid #FFF; border-radius: 50%; }
+.team .members li .bio { font-size: 1.2em; }
+.team .members li .tag { border-top: 2px solid #efcd67; padding: 10px; margin: 10px; font-weight: 300; text-transform: uppercase; font-size: 0.9em; color: #FFF; }
+.team .members li .name { text-decoration: line-through; background: rgba(0, 0, 0, 0.3); display: inline-block; border-radius: 4px; margin-top: 10px; padding: 5px; opacity: 0.3; }
+
+.skills { background: #d84646; color: #FFF; }
+.skills ul { font-size: 0; }
+.skills ul li { font-size: 12pt; display: inline-block; width: 33%; box-sizing: border-box; margin: 10px; padding: 8px 10px; border-radius: 2px; font-weight: 700; background: rgba(255, 255, 255, 0.9); color: #d84646; }
+
+.popup { position: relative; }
+.popup:before { display: none; vertical-align: middle; content: attr(data-hover); position: absolute; bottom: 32px; left: 50%; margin-left: -50px; background: #FFF; font-size: 0.8em; line-height: normal; height: 100px; padding: 25px 10px; box-sizing: border-box; width: 100px; border-radius: 50%; pointer-events: none; }
+.popup:after { display: none; width: 20px; content: ""; height: 20px; background: #FFF; position: absolute; bottom: 25px; left: 50%; margin-left: -10px; -webkit-transform: rotate(45deg); transform: rotate(45deg); pointer-events: none; }
+.popup:hover:before, .popup:hover:after { display: block; }
+
+/* Small Layout */
+@media only screen and (min-width: 480px) { .content { width: 70%; } }
+/* Medium Layout */
+@media only screen and (min-width: 769px) { .team .members li .tag { margin: 15px 30px; } }
+/* Large Layout */
+@media only screen and (min-width: 1100px) { .team .members li .tag { margin: 15px 30px; }
+  .team .members li { width: 25%; }
+  .skills ul li { width: auto; } }
